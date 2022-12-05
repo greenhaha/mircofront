@@ -3,7 +3,17 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+import { registerMicroApps, start } from 'qiankun';
+registerMicroApps([
+  {
+    name: 'reactNext',
+    entry: '//localhost:3001',
+    container: '#container',
+    activeRule: '/',
+  },
+]);
+// 启动 qiankun
+start();
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
